@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useSelector, useDispatch } from "react-redux";
+import AfterLoginMain from "./components/afterLogin/afterLoginMain";
+import BeforeLoginMain from "./components/beforeLogin/beforeLoginMain";
+import Admin from "./components/admin/admin";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
+  const login = useSelector((state) => state.mert.login);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {login === true ? <AfterLoginMain /> : <BeforeLoginMain />}
+      <Routes>
+        <Route path="/admin" element={<Admin />} />;
+      </Routes>
     </div>
   );
 }
