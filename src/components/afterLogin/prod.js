@@ -28,7 +28,7 @@ function Prod() {
                     {element.Name}
                   </p>
                   <p className="text-[#001d48] text-center text-xl font-bold mt-12">
-                    {element.Price}
+                    {element.Price + ",00 TL"}
                   </p>
                 </div>
               </Link>

@@ -25,7 +25,7 @@ function Body() {
             {data[0].Name}
           </p>
           <p className="text-[#001d48] text-center text-xl font-bold mt-12">
-            {data[0].Price}
+            {data[0].Price + ",00 TL"}
           </p>
         </Link>
         <Link
@@ -43,7 +43,7 @@ function Body() {
             {data[7].Name}
           </p>
           <p className="text-[#001d48] text-center text-xl font-bold mt-12">
-            {data[7].Price}
+            {data[7].Price + ",00 TL"}
           </p>
         </Link>
         <Link
@@ -60,7 +60,7 @@ function Body() {
             {data[11].Name}
           </p>
           <p className="text-[#001d48] text-center text-xl font-bold mt-12">
-            {data[11].Price}
+            {data[11].Price + ",00 TL"}
           </p>
         </Link>
       </div>
