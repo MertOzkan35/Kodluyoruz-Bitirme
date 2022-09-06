@@ -48,7 +48,7 @@ function HomePage() {
           <input
             onChange={(event) => prodName(event.target.value)}
             className="w-1/3 h-10 rounded-3xl border border-[#f79b21]  mt-12 ml-36 pl-3 font-semibold "
-            placeholder="ürün ara"
+            placeholder="Ürün Ara"
           ></input>
         </div>
         <div className=" grid grid-cols-3 gap-12 m-16 ">
