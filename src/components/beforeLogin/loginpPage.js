@@ -34,12 +34,14 @@ function LoginPage() {
             className="w-[200px] h-10 rounded-2xl border-2 border-black pl-2 font-semibold "
           ></input>
         </div>
-        <button
-          className="w-24 h-12  bg-[#f79b21] rounded-full font-semibold "
-          onClick={Login}
-        >
-          <Link to="/">Giriş Yap</Link>
-        </button>
+        <Link to="/">
+          <button
+            className="w-24 h-12  bg-[#f79b21] rounded-full font-semibold "
+            onClick={Login}
+          >
+            Giriş Yap
+          </button>
+        </Link>
       </div>
     </div>
   );
