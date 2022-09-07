@@ -1,15 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  login: false,
+  login: { payload: "x" },
 };
 
 export const loginSlice = createSlice({
   name: "login",
   initialState: initialState,
   reducers: {
-    changeLogin: (state) => {
-      state.login = !state.login;
+    changeLogin: (state, payload) => {
+      state.login = payload;
     },
   },
 });

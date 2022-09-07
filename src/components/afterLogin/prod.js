@@ -13,7 +13,7 @@ function Prod() {
     var value = [data.filter((item) => item.Id === value)];
     const lastProd = value[0][0];
 
-    if (login) {
+    if (login.payload.length > 4) {
       return dispatch(changeProds({ lastProd }));
     }
     return alert("Giriş yapmanız gerekmetedir.");
@@ -28,9 +28,9 @@ function Prod() {
         {data &&
           data.map((element, key) => {
             return (
-              <div>
+              <div key={key}>
                 <div className="w-full h-[550px] border  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl">
-                  <Link to={`/prod${element.Id}`}>
+                  <Link to={`/prod/${element.Id}`}>
                     <p className="w-full text-[#4c4c4c] text-end font-bold">
                       {" "}
                       Kullanıcı Puanı : {element.Point}
