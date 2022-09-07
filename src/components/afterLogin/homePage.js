@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { changeProds } from "../../store/slices/shoppingCartSlice";
 import { deleteProds } from "../../store/slices/shoppingCartSlice";
+import { clearProds } from "../../store/slices/shoppingCartSlice";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function HomePage() {
@@ -29,12 +30,15 @@ function HomePage() {
 
   const order = () => {
     setVisibilityOrder("visible");
+    dispatch(clearProds());
   };
 
   const prodName = (event) => {
-    const name = event;
+    const name = event.toLowerCase();
     console.log(name);
-    const filteredArray = dataStore.filter((item) => item.Name.includes(name));
+    const filteredArray = dataStore.filter((item) =>
+      item.Name.toLowerCase().includes(name)
+    );
     setdata(filteredArray);
   };
 
@@ -59,7 +63,7 @@ function HomePage() {
                   key={key}
                   className="w-full h-[550px] border  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl"
                 >
-                  <Link key={key} to={`/prod${element.Id}`}>
+                  <Link key={key} to={`/prod/${element.Id}`}>
                     <p className="w-full text-[#4c4c4c] text-end font-bold">
                       {" "}
                       Kullanıcı Puanı : {element.Point}
@@ -146,7 +150,7 @@ function HomePage() {
           <p
             className={` mt-10 text-center text-xl font-bold ${visibilityorder} text-[#207609] `}
           >
-            Sipriş Verildi
+            Sipariş Verildi
           </p>
         </div>
       </div>

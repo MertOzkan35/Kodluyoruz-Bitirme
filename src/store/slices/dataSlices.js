@@ -53,7 +53,7 @@ const initialState = {
       Id: "4",
       img: "https://img-itopya.mncdn.com/cdn/350/yeni-proje-2022-03-07t184532209-bda05f.jpg",
       Category: "Gaming Bilgisayar",
-      Price: 12.755,
+      Price: 127.552,
       Features:
         "Fortnite, Call of Duty: Modern Warfare, ve Rainbow Six Siege gibi FPS ve Battle Royale oyunları kazamak için her zaman en iyi performansa ihtiyacınız var. Rekabetçi oyunlarda 144, 240, hatta 360 FPS değerlerine ulaşabilmek için en önemli bileşen ise bir GeForce RTX™ ekran kartı.",
     },

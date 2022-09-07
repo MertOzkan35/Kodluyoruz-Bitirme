@@ -13,8 +13,12 @@ export const prodsSlice = createSlice({
     deleteProds: (state, { payload }) => {
       state.prods = state.prods.filter((item) => item.lastProd.Id !== payload);
     },
+    clearProds: (state) => {
+      state.prods = [];
+    },
   },
 });
 export const { changeProds } = prodsSlice.actions;
 export const { deleteProds } = prodsSlice.actions;
+export const { clearProds } = prodsSlice.actions;
 export default prodsSlice.reducer;
