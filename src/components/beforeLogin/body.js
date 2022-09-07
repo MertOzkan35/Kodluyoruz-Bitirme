@@ -11,7 +11,7 @@ function Body() {
       </p>
       <div className=" border-b-2  flex flex-col-3 justify-center">
         <Link
-          to="/prod0"
+          to="/prod/0"
           className="w-1/4 h-[550px] border m-8 p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl"
         >
           <p className="w-full text-[#4c4c4c] text-end font-bold">
@@ -29,7 +29,7 @@ function Body() {
           </p>
         </Link>
         <Link
-          to="/prod7"
+          to="/prod/7"
           className="w-1/4 h-[550px] border m-8 p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl "
         >
           <p className="w-full text-[#4c4c4c] text-end font-bold">
@@ -47,7 +47,7 @@ function Body() {
           </p>
         </Link>
         <Link
-          to="/prod11"
+          to="/prod/11"
           className="w-1/4 h-[550px] border m-8 p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl "
         >
           <p className="w-full text-[#4c4c4c] text-end font-bold">

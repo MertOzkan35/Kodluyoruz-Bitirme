@@ -8,7 +8,7 @@ function BeforeLoginNavbar() {
         <img src={require("../images/logo2.png")} />
       </Link>
       <div className="">
-        <Link to="/urunler">
+        <Link to="/urunlerimiz">
           <button className="w-24 h-12 mx-8 bg-[#f79b21] hover:shadow-lg rounded-full font-semibold">
             Ürünler
           </button>
