@@ -29,7 +29,7 @@ function Prod() {
           data.map((element, key) => {
             return (
               <div key={key}>
-                <div className="w-full h-[550px] border  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl">
+                <div className="w-full h-full border  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl">
                   <Link to={`/prod/${element.Id}`}>
                     <p className="w-full text-[#4c4c4c] text-end font-bold">
                       {" "}

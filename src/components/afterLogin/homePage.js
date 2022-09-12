@@ -10,8 +10,11 @@ function HomePage() {
   const [visibilityorder, setVisibilityOrder] = useState("hidden");
   const dispatch = useDispatch();
   const dataStore = useSelector((state) => state.data.data);
+
   const prodsData = useSelector((state) => state.prods.prods);
+
   const [data, setdata] = useState(dataStore);
+  //console.log(data);
   const shoppingCart = (value) => {
     var value = [data.filter((item) => item.Id === value)];
     const lastProd = value[0][0];
@@ -61,7 +64,7 @@ function HomePage() {
               return (
                 <div
                   key={key}
-                  className="w-full h-[550px] border  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl"
+                  className="w-full h-full border  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl"
                 >
                   <Link key={key} to={`/prod/${element.Id}`}>
                     <p className="w-full text-[#4c4c4c] text-end font-bold">
@@ -136,7 +139,7 @@ function HomePage() {
                 <p className="text-center mb-2"> Toplam Tutar</p>
                 <p className="text-center mb-6">
                   {" "}
-                  {totalPrice.toFixed(3) + ",00 TL"}
+                  {totalPrice.toFixed(0) + ",00 TL"}
                 </p>
                 <button
                   onClick={order}
