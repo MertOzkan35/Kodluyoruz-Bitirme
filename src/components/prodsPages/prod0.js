@@ -30,11 +30,11 @@ function Prod0() {
   const selectedProd = data.find((x) => x.Id === id);
   return (
     <div className="flex flex-col">
-      <div className="w-full h-[100px]  bg-[#e8e8e8] font-semibold text-2xl text-[#1e273a] mt-2  flex pl-12 pb-2  items-end">
+      <div className="w-full h-[100px]  bg-[#e8e8e8] font-semibold text-2xl text-[#1e273a] mt-2  flex  pb-2  items-end justify-center">
         {selectedProd.Category}
       </div>
-      <div className="flex w-full h-[38rem]   justify-center items-center my-24">
-        <div className="w-1/5 h-full border-x-2   flex-col ">
+      <div className="flex  flex-col sm:flex-row w-full h-full  gap-4 justify-center items-center my-24">
+        <div className="w-3/4 sm:w-1/5 h-full border-2 flex-col ">
           <img
             className=" rounded-xl object-cover"
             src={selectedProd && selectedProd.img}
@@ -47,7 +47,7 @@ function Prod0() {
               onClick={(e) =>
                 shoppingCart(selectedProd && `${selectedProd.Id}`)
               }
-              className="w-1/2  h-12 bg-[#fa9d28]  hover:border-2 rounded-2xl border font-bold"
+              className="w-1/2 mb-8  h-12 bg-[#fa9d28]  hover:border-2 rounded-2xl border font-bold"
             >
               Sepete Ekle
             </button>
@@ -59,19 +59,19 @@ function Prod0() {
             </p>
           </div>
         </div>
-        <div className="w-2/5 h-full border-r-2 flex flex-col ">
-          <div className="flex flex-col justify-start items-center text-4xl pl-8 pt-8 pb-12 font-bold border-b-2 ">
+        <div className="w-3/4 sm:w-2/5 h-full border-2   flex flex-col ">
+          <div className="flex flex-col justify-start items-center text-center text-xl sm:text-4xl px-3 sm:pl-8 pt-8 pb-12 font-bold border-b-2 ">
             <p className="hover:text-[#f78501]">
               {selectedProd && selectedProd.Name}
             </p>
-            <p className=" text-lg opacity-40 pt-8">
+            <p className="  sm:text-lg text-sm opacity-40 pt-8">
               Kullanıcı Puanı : {selectedProd && selectedProd.Point}
             </p>
           </div>
-          <div className="flex flex-col justify-start text-3xl text-[#222121] font-semibold items-center pl-8 pt-8 pb-12 border-b-2">
+          <div className="flex flex-col justify-start text-base sm:text-3xl text-[#222121] font-semibold items-center text-center pt-8 pb-12 border-b-2">
             {selectedProd && selectedProd.Price + ",00 TL"}
           </div>
-          <div className="flex flex-col justify-start px-8 leading-8 text-[#222121] font-semibold items-center pl-8 pt-8 pb-12 border-b-2">
+          <div className="flex flex-col justify-start text-xs sm:text-base px-8 leading-8 text-[#222121] font-semibold items-center pl-8 pt-8 pb-12 ">
             {selectedProd && selectedProd.Features}
           </div>
         </div>

@@ -18,7 +18,7 @@ function LoginPage() {
   }
   return (
     <div className="w-full flex justify-center  items-center">
-      <div className="mt-[100px] w-1/3 h-[450px] mb-12 rounded-2xl flex flex-col justify-between items-center bg-[#f79b21] bg-opacity-40 p-11 border-2 border-[#f79b21]">
+      <div className="mt-[100px] w-3/5 sm:w-1/2 md:w-1/3 h-[450px] mb-12 rounded-2xl flex flex-col justify-between items-center bg-[#f79b21] bg-opacity-40 p-11 border-2 border-[#f79b21]">
         <div className="  gap-4">
           <p className="text-[16px] w-54   flex justify-center items-center  font-semibold text-center gap-2 pb-4 ">
             {" "}
@@ -26,7 +26,7 @@ function LoginPage() {
           </p>
           <input
             onChange={(e) => setUserName(e.target.value)}
-            className="w-[200px] h-10 rounded-2xl border-2 border-white pl-2 font-semibold "
+            className="w-full h-10 rounded-2xl border-2 border-white pl-2 font-semibold "
           ></input>
         </div>
         <div className="gap-4">
@@ -37,7 +37,7 @@ function LoginPage() {
           <input
             onChange={(e) => setPassword(e.target.value)}
             type="password"
-            className="w-[200px] h-10 rounded-2xl border-2 border-white pl-2 font-semibold "
+            className="w-full h-10 rounded-2xl border-2 border-white pl-2 font-semibold "
           ></input>
         </div>
         <Link to="/">

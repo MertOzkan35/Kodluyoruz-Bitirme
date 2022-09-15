@@ -6,35 +6,35 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 export class DataDelete extends Component {
   render() {
     return (
-      <div className="w-full flex flex-cols-2">
-        <div className="flex flex-col justify-between py-16 w-1/4 h-[30rem] items-center border-2 ">
+      <div className="w-full grid gird-col">
+        <div className="flex flex:row  text-xs sm:text-base mt-2 py-16 gap-4 w-full justify-center  h-full  px-2 items-center border-2 ">
           <Link
             to="/admin/add"
-            className="w-3/4 text-center pt-2 h-12 font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
+            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
           >
-            ADD PROD
+            Ürün Ekle
           </Link>
           <Link
             to="/admin/delete"
-            className="w-3/4 text-center pt-2 h-12 font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
+            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
           >
-            DELETE PROD
+            Ürün Sil
           </Link>
           <Link
             to="/admin/update"
-            className="w-3/4 text-center pt-2 h-12 font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
+            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
           >
-            UPDATE PROD
+            Ürün Güncelle
           </Link>
           <Link
             to="/admin/salesdata"
-            className="w-3/4 text-center pt-2 h-12 font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
+            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
           >
-            SALES INFO
+            Satış Bilgileri
           </Link>
         </div>
-        <div className="w-3/4 h-full ">
-          <div className=" grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-12 m-16 ">
+        <div className=" w-full  h-full mt-2 ">
+          <div className=" grid grid-cols-1 justify-center lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-12 m-16 ">
             {this.props.allData &&
               this.props.allData.map((element, key) => {
                 return (

@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 const basket = localStorage.getItem("shopingCart");
-const parsedBasket = JSON.parse(basket);
+const parsedBasket = JSON.parse(basket) ? JSON.parse(basket) : [];
 const initialState = {
   prods: parsedBasket.length > 0 ? parsedBasket : [],
 };

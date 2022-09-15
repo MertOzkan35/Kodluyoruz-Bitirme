@@ -35,7 +35,7 @@ class Admin extends Component {
     return (
       <div>
         <div className="w-full flex justify-center  items-center">
-          <div className="mt-[100px] w-1/3 h-[350px] mb-12 rounded-2xl flex flex-col justify-between items-center bg-[#f79b21] bg-opacity-40 p-11 border-2 border-[#f79b21]">
+          <div className="mt-[100px] w-3/5 sm:w-1/2 md:w-1/3 h-[350px] mb-12  rounded-2xl flex flex-col justify-between items-center bg-[#f79b21] bg-opacity-40 p-11 border-2 border-[#f79b21]">
             <p className="font-bold ">Admin Giriş Paneli </p>
 
             <div className="gap-4">
@@ -47,7 +47,7 @@ class Admin extends Component {
               <input
                 onChange={this.changeInput.bind(this)}
                 type="password"
-                className="w-[200px] h-10 rounded-2xl border-2 border-white pl-2 font-semibold "
+                className="w-full h-10 rounded-2xl border-2 border-white pl-2 font-semibold "
               ></input>
             </div>
             <Link to={`${this.state.link}`}>

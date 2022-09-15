@@ -21,15 +21,15 @@ function Prod() {
 
   return (
     <div className="flex flex-col ">
-      <p className="text-[2rem] hover:text-[#fa9d28] font-bold text-[#4c4c4c] my-8 ml-28">
+      <p className="text-[2rem] hover:text-[#fa9d28] font-bold text-[#4c4c4c] my-8 m-auto sm:ml-28">
         Tüm Ürünler
       </p>
-      <div className=" grid grid-cols-4 gap-12 m-16 ">
+      <div className=" grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 m-16 ">
         {data &&
           data.map((element, key) => {
             return (
               <div key={key}>
-                <div className="w-full h-full border  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl">
+                <div className="w-full h-full border  px-4 pt-4  hover:border-[#fa9d28] rounded-xl flex flex-col justify-between hover:shadow-2xl">
                   <Link to={`/prod/${element.Id}`}>
                     <p className="w-full text-[#4c4c4c] text-end font-bold">
                       {" "}
@@ -50,7 +50,7 @@ function Prod() {
                       {element.Price + ",00 TL"}
                     </p>
                   </Link>
-                  <div className="w-full flex flex-col justify-center items-center pt-8">
+                  <div className="w-full h-32 pb-4 flex flex-col justify-end items-center ">
                     <button
                       onClick={(e) => shoppingCart(`${element.Id}`)}
                       className="w-1/2  h-12 bg-[#fa9d28]  hover:border-2 rounded-2xl border font-bold"

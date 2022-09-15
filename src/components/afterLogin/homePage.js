@@ -46,15 +46,15 @@ function HomePage() {
   };
 
   return (
-    <div className="flex w-full">
-      <div className="flex flex-col w-3/4  border-r-2 ">
-        <div className="flex w-full pb-6 justify-start  border-b-2 ">
-          <p className="text-[#001d48]  text-2xl font-bold mt-[52px] ml-24 hover:text-[#f79b21]">
+    <div className="flex flex-col sm:flex-row w-full">
+      <div className="flex flex-col w-3/2 sm:w-3/4  border-r-2 ">
+        <div className="flex w-full pb-6  flex-col sm:flex-row justify-between px-24 border-b-2 ">
+          <p className="text-[#001d48]  text-2xl font-bold mt-[52px]   hover:text-[#f79b21]">
             ALIŞVERİŞE BAŞLA!
           </p>
           <input
             onChange={(event) => prodName(event.target.value)}
-            className="w-1/3 h-10 rounded-3xl border border-[#f79b21]  mt-12 ml-36 pl-3 font-semibold "
+            className="sm:w-1/3 w-full h-10 rounded-3xl border border-[#f79b21]  mt-12 pl-2  font-semibold "
             placeholder="Ürün Ara"
           ></input>
         </div>
@@ -99,8 +99,8 @@ function HomePage() {
             })}
         </div>
       </div>
-      <div className="flex flex-col items-center w-1/4 h-[100rem] ">
-        <div className="c w-full items-center text-center font-bold mt-10 mb-8 pb-12 text-[#fa9d28] hover:text-black border-b-2 ">
+      <div className="flex flex-col items-center w-full sm:w-1/4 h-[full] ">
+        <div className="c w-full items-center text-center font-bold mt-10 mb-6 pb-12 text-[#fa9d28] hover:text-black border-b-2 ">
           Sepetiniz
         </div>
         <div className={`pt-4`}>
