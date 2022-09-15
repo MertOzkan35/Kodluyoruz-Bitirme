@@ -24,7 +24,7 @@ function App() {
 
   const newPassword = localStorage.getItem("password");
 
-  const login = useSelector((state) => state.mert.login);
+  const login = useSelector((state) => state.MainData.login);
   useEffect(() => {
     if (newPassword) {
       dispatch(changeLogin(newPassword));
