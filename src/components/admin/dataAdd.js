@@ -14,11 +14,13 @@ export class DataAdd extends Component {
     Price: 0,
     Features: "",
   };
-
+  // ıD DEĞERİNİ ProdId = allData.data.length.toString(); ile dinamik yapıyoruz
+  // bu statei payload olarak gönderiyoruz
   componentDidUpdate(pP, state) {
     state = state;
   }
-
+  // sayfa açılınca state güncellemesi yapıyoruz
+  //  her inputun değerini alıyoruz.
   createProdName(event) {
     this.setState({ Name: event.target.value });
   }
@@ -154,6 +156,7 @@ export class DataAdd extends Component {
   }
 }
 
+// reduxtan datayı çektiiğimiz kısım
 function mapStateToProps(data) {
   const allData = data.data;
   const ProdId = allData.data.length.toString();

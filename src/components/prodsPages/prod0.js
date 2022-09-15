@@ -6,28 +6,28 @@ import { changeProds } from "../../store/slices/shoppingCartSlice";
 import { useParams } from "react-router-dom";
 
 function Prod0() {
-  // useEffect(() => {
-  //   setdata(dataStore);
-  // }, [data]);
+  // ürünleri dinamik olarak bu sayfada yayınlıyoruz
   const { id } = useParams();
-  console.log(id);
+  // dinamik sayfa için useParams kullanıyoruz
   const [visibilityorder, setVisibilityOrder] = useState("hidden");
-  const login = useSelector((state) => state.mert.login);
+  const login = useSelector((state) => state.MainData.login);
   const dispatch = useDispatch();
   const dataStore = useSelector((state) => state.data.data);
   const [data, setdata] = useState(dataStore);
-  console.log(data);
   function shoppingCart(value) {
+    //  ürünü sepete ekleme için kullandığımız fonksyon
     var value = [data.filter((item) => item.Id === value)];
     const lastProd = value[0][0];
 
     if (login.payload.length > 4) {
       return dispatch(changeProds({ lastProd })), setVisibilityOrder("visible");
     }
+    // ürünü sepete eklemek için girş yapman gerekir şartı koyuyoruz
     return alert("Giriş yapmanız gerekmetedir.");
   }
 
   const selectedProd = data.find((x) => x.Id === id);
+  // sayfayı, ürünlerin ıd numarasını temel alarak  bastırıyoruz
   return (
     <div className="flex flex-col">
       <div className="w-full h-[100px]  bg-[#e8e8e8] font-semibold text-2xl text-[#1e273a] mt-2  flex  pb-2  items-end justify-center">

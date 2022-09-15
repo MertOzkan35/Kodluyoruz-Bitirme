@@ -6,10 +6,14 @@ import { clearProds } from "../../store/slices/shoppingCartSlice";
 
 function Cart() {
   const [visibilityorder, setVisibilityOrder] = useState("hidden");
+  // görünürlüğü dinamik yaptık.
   const dataStore = useSelector((state) => state.data.data);
   const [data, setdata] = useState(dataStore);
+  // reduxtan datayı çektik
   let userName = localStorage.getItem("userName");
+  // localStorageden ismi çağırdık
   const prodsData = useSelector((state) => state.prods.prods);
+  // reduxtan sepet bilgisini çektik
   const dispatch = useDispatch();
 
   const deleteProd = (value) => {
@@ -18,14 +22,14 @@ function Cart() {
     dispatch(deleteProds(`${lastProd2.Id}`));
     setVisibilityOrder("hidden");
   };
-
+  // ürün silerken kullanılan fonksyon
   const order = () => {
     setVisibilityOrder("visible");
     dispatch(clearProds());
   };
 
   const totalPrice = prodsData.reduce((a, v) => (a = a + v.lastProd.Price), 0);
-
+  //  ürün fiyat toplamı için reduce kullandık
   return (
     <div className="flex flex-col w-full">
       <div className="flex w-full pb-6 justify-start  border-b-2 ">

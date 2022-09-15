@@ -10,15 +10,15 @@ function HomePage() {
   const [visibilityorder, setVisibilityOrder] = useState("hidden");
   const dispatch = useDispatch();
   const dataStore = useSelector((state) => state.data.data);
-
+  // reduxtan ana ürün bilgilerini ve sepet bilgilerini çekiyoruz
   const prodsData = useSelector((state) => state.prods.prods);
 
   const [data, setdata] = useState(dataStore);
-  //console.log(data);
   const shoppingCart = (value) => {
     var value = [data.filter((item) => item.Id === value)];
     const lastProd = value[0][0];
     dispatch(changeProds({ lastProd }));
+    // sepete ürünleri ekliyoruz aynı zamanda reduxa ekliyoruz
     setVisibilityOrder("hidden");
   };
 
@@ -28,7 +28,7 @@ function HomePage() {
     dispatch(deleteProds(`${lastProd2.Id}`));
     setVisibilityOrder("hidden");
   };
-
+  // ürünlerin  total fiyatlarını topluyoruz.
   const totalPrice = prodsData.reduce((a, v) => (a = a + v.lastProd.Price), 0);
 
   const order = () => {
@@ -43,6 +43,7 @@ function HomePage() {
       item.Name.toLowerCase().includes(name)
     );
     setdata(filteredArray);
+    // input search sitemini kurduk
   };
 
   return (

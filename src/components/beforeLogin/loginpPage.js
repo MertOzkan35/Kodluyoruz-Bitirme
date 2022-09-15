@@ -9,6 +9,7 @@ function LoginPage() {
   const dispatch = useDispatch();
   function Login() {
     if (userName.length > 0 && password.length > 4) {
+      // kullanıcının giriş yapabilmesi için basit bir kriter koyuyoruz
       localStorage.setItem("userName", userName);
       localStorage.setItem("password", password);
       dispatch(changeLogin(password));

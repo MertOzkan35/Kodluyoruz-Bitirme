@@ -5,7 +5,7 @@ import prodsReducer from "./slices/shoppingCartSlice";
 
 export default configureStore({
   reducer: {
-    mert: loginReducer,
+    MainData: loginReducer,
     data: dataReducer,
     prods: prodsReducer,
     // redux store kısmı

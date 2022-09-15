@@ -4,7 +4,7 @@ const parsedBasket = JSON.parse(basket) ? JSON.parse(basket) : [];
 const initialState = {
   prods: parsedBasket.length > 0 ? parsedBasket : [],
 };
-
+// sepet ürünlerinin bulunduğu data
 export const prodsSlice = createSlice({
   name: "prods",
   initialState: initialState,

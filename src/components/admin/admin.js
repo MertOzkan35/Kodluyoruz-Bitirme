@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-
+// admin giriş sayfası
 class Admin extends Component {
   state = {
     adminPassword: "112234",
@@ -9,6 +9,7 @@ class Admin extends Component {
     link: "/admin",
     value: false,
   };
+  // admin giriş şifresinin tutulduğu state
   componentDidUpdate(pP, state) {
     state = state;
     if (
@@ -19,18 +20,19 @@ class Admin extends Component {
       this.setState({ value: true });
     }
   }
-
+  // stateti güncelleyip sifre doğru ise yönlendirme yapıyoruz.
   changeInput(event) {
     this.password = event.target.value;
     this.setState({ inputValue: event.target.value });
   }
-
+  // inputa yazılan şifreyi alıyoruz
   login() {
     if (this.state.inputValue == this.state.adminPassword) {
     } else {
       alert("ŞİFRE HATALI");
     }
   }
+  // şifre hatalı ise uyarı veriyoruz
   render() {
     return (
       <div>

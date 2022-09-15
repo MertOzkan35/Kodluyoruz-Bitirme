@@ -16,7 +16,7 @@ import { useSelector } from "react-redux";
 import { Routes, Route } from "react-router-dom";
 
 function Router() {
-  const login = useSelector((state) => state.mert.login);
+  const login = useSelector((state) => state.MainData.login);
   return (
     <div>
       <Routes>

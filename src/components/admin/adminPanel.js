@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 export class AdminPanel extends Component {
+  // bu sayfayı yönlendirme sayfası olarak kullanlıyoruz
   render() {
     return (
       <div className="w-full">

@@ -83,7 +83,7 @@ export class DataDelete extends Component {
 
 function mapStateToProps(data) {
   const allData = data.data.data;
-  // const ProdId = allData.data.length.toString();
+  // reduxtan datayı çekiyoruz map ile dönüyoruz
   console.log(allData);
   return { allData };
 }
@@ -91,3 +91,4 @@ function mapStateToProps(data) {
 const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, { deleteData })(DataDelete);
+// delete data içine payload gönderiyoruz

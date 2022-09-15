@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   login: { payload: "x" },
+  // login bilgimizin olduğu data
 };
 
 export const loginSlice = createSlice({

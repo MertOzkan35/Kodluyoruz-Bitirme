@@ -9,6 +9,7 @@ function AfterLoginNavbar() {
   const dispatch = useDispatch();
   function Logout() {
     dispatch(changeLogin("x"));
+    // çıkış yapınca login değerini değiştiyoruz
   }
   const prodsData = useSelector((state) => state.prods.prods);
   const [prodNumber, setprodNumber] = useState(0);

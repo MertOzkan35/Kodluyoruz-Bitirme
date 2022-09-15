@@ -14,6 +14,7 @@ export class DataUpdate extends Component {
     Price: 0,
     Features: "",
   };
+  // her ürün için tek bir state kullanıyoruz bu statei payload olarak gönderiyoruz
   componentDidUpdate(pP, state) {
     state = state;
     console.log(this.state);
@@ -186,6 +187,7 @@ export class DataUpdate extends Component {
 
 function mapStateToProps(data) {
   const allData = data.data.data;
+  // reduxtan datayı çekiyor ve map ile dönüyoruz
   console.log(allData);
   return { allData };
 }
@@ -193,3 +195,4 @@ function mapStateToProps(data) {
 const mapDispatchToProps = {};
 
 export default connect(mapStateToProps, { updateData })(DataUpdate);
+// updateData içine payload gönderiyoruz değiştirme işlmeini reduxta yapıyoruz.

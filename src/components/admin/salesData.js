@@ -7,6 +7,9 @@ export class SalesData extends Component {
   state = {
     order: "weekly",
   };
+
+  // hafta ay ve yıl için ayrı data tutuyoruz bu dataları dinamik yapıyoruz onclcik event yardımıyla değiştiriyoruz
+
   dataWeek = [
     ["Gün", " Haftalık Total Ciro"],
     [1, 52.524],

@@ -7,12 +7,12 @@ import { changeProds } from "../../store/slices/shoppingCartSlice";
 function Prod() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data.data);
-  const login = useSelector((state) => state.mert.login);
+  const login = useSelector((state) => state.MainData.login);
 
   function shoppingCart(value) {
     var value = [data.filter((item) => item.Id === value)];
     const lastProd = value[0][0];
-
+    // sepete ürün ekliyoruz fakat bunun için giriş yapmalı diyoruz
     if (login.payload.length > 4) {
       return dispatch(changeProds({ lastProd }));
     }
