@@ -19,13 +19,17 @@ export class DataDelete extends Component {
                     key={key}
                     className="w-full h-full border  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl"
                   >
-                    <Link key={key} to={`/prod/${element.Id}`}>
+                    <Link
+                      key={key}
+                      to={`/prod/${element.Id}`}
+                      className="flex w-full h-full flex-col justify-center items-center"
+                    >
                       <p className="w-full text-[#4c4c4c] text-end font-bold">
                         {" "}
                         Kullanıcı Puanı : {element.Point}
                       </p>
                       <img
-                        className=" rounded-xl object-cover"
+                        className=" rounded-xl object-cover scale-75 hover:scale-100 ease-in duration-500"
                         src={element.img}
                       />
 
