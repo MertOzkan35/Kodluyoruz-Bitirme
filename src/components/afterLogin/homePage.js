@@ -139,8 +139,7 @@ function HomePage() {
               <div className="w-full border-t-2 flex flex-col items-center justify-center pt-8 font-bold  text-[#001d48]">
                 <p className="text-center mb-2"> Toplam Tutar</p>
                 <p className="text-center mb-6">
-                  {" "}
-                  {totalPrice.toFixed(3) + ",00 TL"}
+                  {totalPrice && totalPrice.toFixed(3) + ",00 TL"}
                 </p>
                 <button
                   onClick={order}

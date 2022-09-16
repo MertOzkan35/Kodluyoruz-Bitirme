@@ -23,6 +23,11 @@ export class UpdateProd extends Component {
   ProdUpdate(event, key) {
     this.setState({ [key]: event });
   }
+  ProdUpdatePrice(event, key) {
+    this.NumberPrice = parseInt(event);
+    console.log(this.NumberPrice);
+    this.setState({ [key]: this.NumberPrice });
+  }
 
   render() {
     const selectedProd = this.props.allData.find((x) => x.Id === this.id);
@@ -43,22 +48,28 @@ export class UpdateProd extends Component {
                       this.ProdUpdate(event.target.value, "Name")
                     }
                     className="w-3/4  font-semibold h-16  border-2 rounded-2xl m-4 pl-2"
+                    placeholder={selectedProd.Name}
                   ></input>
                 </div>
 
                 <div className="flex w-3/4 flex-col border-2 rounded-2xl  justify-center place-items-center ">
                   <p className="font-bold pt-2 items-center ">Category</p>
                   <input
-                    onChange={(value) => this.ProdUpdate.bind(value, "Name")}
+                    onChange={(event) =>
+                      this.ProdUpdate(event.target.value, "Category")
+                    }
                     className="w-3/4 font-semibold h-16  border-2 rounded-2xl m-4 pl-2"
+                    placeholder={selectedProd.Category}
                   ></input>
                 </div>
                 <div className="flex w-3/4 flex-col border-2 rounded-2xl  justify-center place-items-center ">
                   <p className="font-bold pt-2 items-center ">Price</p>
                   <input
-                    type="number"
-                    onChange={(value) => this.ProdUpdate.bind(value, "Price")}
+                    onChange={(event) =>
+                      this.ProdUpdatePrice(event.target.value, "Price")
+                    }
                     className="w-3/4 font-semibold h-16  border-2 rounded-2xl m-4 pl-2"
+                    placeholder={selectedProd.Price}
                   ></input>
                 </div>
               </div>
@@ -66,22 +77,31 @@ export class UpdateProd extends Component {
                 <div className="flex w-3/4 flex-col border-2 rounded-2xl mt-6  justify-start place-items-center ">
                   <p className="font-bold pt-2 items-center ">Stok</p>
                   <input
-                    onChange={(value) => this.ProdUpdate.bind(value, "Stok")}
+                    onChange={(event) =>
+                      this.ProdUpdate(event.target.value, "Stok")
+                    }
                     className="w-3/4 font-semibold h-16  border-2 rounded-2xl m-4 pl-2"
+                    placeholder={selectedProd.Stok}
                   ></input>
                 </div>
                 <div className="flex w-3/4 flex-col border-2 rounded-2xl  justify-center place-items-center ">
                   <p className="font-bold pt-2 items-center ">Point</p>
                   <input
-                    onChange={(value) => this.ProdUpdate.bind(value, "Point")}
+                    onChange={(event) =>
+                      this.ProdUpdate(event.target.value, "Point")
+                    }
                     className="w-3/4 font-semibold h-16  border-2 rounded-2xl m-4 pl-2"
+                    placeholder={selectedProd.Point}
                   ></input>
                 </div>
                 <div className="flex w-3/4 flex-col border-2 rounded-2xl mt-4  justify-center place-items-center ">
                   <p className="font-bold pt-2 items-center ">Image</p>
                   <input
-                    onChange={(value) => this.ProdUpdate.bind(value, "Image")}
+                    onChange={(event) =>
+                      this.ProdUpdate(event.target.value, "img")
+                    }
                     className="w-3/4 font-semibold h-16  border-2 rounded-2xl m-4 pl-2"
+                    placeholder={selectedProd.img}
                   ></input>
                 </div>
 
@@ -92,10 +112,13 @@ export class UpdateProd extends Component {
               <div className="flex w-2/4 flex-col border-2 rounded-2xl mb-6  justify-center place-items-center ">
                 <p className="font-bold pt-2 items-center ">Features</p>
                 <textarea
-                  onChange={(value) => this.ProdUpdate.bind(value, "Features")}
+                  onChange={(event) =>
+                    this.ProdUpdate(event.target.value, "Features")
+                  }
                   rows="4"
                   cols="50"
                   className="w-3/4 font-semibold h-[180px] border-2 rounded-2xl pt-2 m-4 pl-2"
+                  placeholder={selectedProd.Features}
                 ></textarea>
               </div>
             </div>
