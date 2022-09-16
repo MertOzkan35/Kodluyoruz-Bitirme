@@ -1,8 +1,12 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { isLogin } from "../../store/slices/adminLogin";
 
 export class AdminPanel extends Component {
+  clearAdminFromLocalStorge() {
+    localStorage.removeItem("adminPassword");
+  }
   // bu sayfayı yönlendirme sayfası olarak kullanlıyoruz
   render() {
     return (
@@ -32,6 +36,16 @@ export class AdminPanel extends Component {
           >
             Satış Bilgileri
           </Link>
+          <Link
+            to="/admin"
+            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
+            onClick={() => {
+              this.props.isLogin(false);
+              this.clearAdminFromLocalStorge();
+            }}
+          >
+            Panelden Çıkış
+          </Link>
         </div>
       </div>
     );
@@ -40,6 +54,4 @@ export class AdminPanel extends Component {
 
 const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AdminPanel);
+export default connect(mapStateToProps, { isLogin })(AdminPanel);

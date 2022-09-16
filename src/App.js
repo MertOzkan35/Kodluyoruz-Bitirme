@@ -6,6 +6,7 @@ import BeforeLoginMain from "./components/beforeLogin/beforeLoginMain";
 import { Routes, Route } from "react-router-dom";
 import Footer from "./components/footer/footer";
 import { changeLogin } from "./store/slices/loginSlices";
+import { isLogin } from "./store/slices/adminLogin";
 import { addbulk } from "./store/slices/dataSlices";
 import { mockdata } from "./store/slices/mock";
 function App() {
@@ -13,7 +14,6 @@ function App() {
   useEffect(() => {
     const products = localStorage.getItem("products");
     const parsedproducts = JSON.parse(products);
-
     if (parsedproducts) {
       dispatch(addbulk(parsedproducts));
     } else {
@@ -23,14 +23,20 @@ function App() {
   }, []);
 
   const newPassword = localStorage.getItem("password");
-
-  const login = useSelector((state) => state.MainData.login);
+  const login = useSelector((state) => state.login.login);
   useEffect(() => {
     if (newPassword) {
       dispatch(changeLogin(newPassword));
     }
   }, [newPassword]);
+  const adminPassword = localStorage.getItem("adminPassword");
 
+  useEffect(() => {
+    console.log(adminPassword);
+    if (adminPassword) {
+      dispatch(isLogin(true));
+    }
+  }, [adminPassword]);
   return (
     <div>
       {login.payload.length > 4 ? <AfterLoginMain /> : <BeforeLoginMain />}

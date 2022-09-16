@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { isLogin } from "../../store/slices/adminLogin";
 // admin giriş sayfası
 class Admin extends Component {
   state = {
@@ -28,6 +29,8 @@ class Admin extends Component {
   // inputa yazılan şifreyi alıyoruz
   login() {
     if (this.state.inputValue == this.state.adminPassword) {
+      localStorage.setItem("adminPassword", true);
+      this.props.isLogin(true);
     } else {
       alert("ŞİFRE HATALI");
     }
@@ -69,6 +72,4 @@ class Admin extends Component {
 
 const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Admin);
+export default connect(mapStateToProps, { isLogin })(Admin);

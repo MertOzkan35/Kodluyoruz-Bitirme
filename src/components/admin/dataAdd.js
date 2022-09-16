@@ -2,19 +2,22 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { addProds } from "../../store/slices/dataSlices";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { isLogin } from "../../store/slices/adminLogin";
+import AdminPanel from "./adminPanel";
 
 export class DataAdd extends Component {
   state = {
     Point: "",
     Name: "",
     Stok: "",
-    Id: this.props.ProdId,
+    Id: this.props.IdtoStirng,
     img: "",
     Category: "",
     Price: 0,
     Features: "",
   };
-  // ıD DEĞERİNİ ProdId = allData.data.length.toString(); ile dinamik yapıyoruz
+
+  // ıD DEĞERİNİ LastId = allData.data.length.toString(); ile dinamik yapıyoruz
   // bu statei payload olarak gönderiyoruz
   componentDidUpdate(pP, state) {
     state = state;
@@ -48,32 +51,7 @@ export class DataAdd extends Component {
   render() {
     return (
       <div className="w-full grid gird-col">
-        <div className="flex flex:row  text-xs sm:text-base mt-2 py-16 gap-4 w-full justify-center  h-full  px-2 items-center border-2 ">
-          <Link
-            to="/admin/add"
-            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
-          >
-            Ürün Ekle
-          </Link>
-          <Link
-            to="/admin/delete"
-            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
-          >
-            Ürün Sil
-          </Link>
-          <Link
-            to="/admin/update"
-            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
-          >
-            Ürün Güncelle
-          </Link>
-          <Link
-            to="/admin/salesdata"
-            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
-          >
-            Satış Bilgileri
-          </Link>
-        </div>
+        <AdminPanel />
         <div className=" w-full mt-4  h-full flex flex-col justify-center items-center">
           <div className="w-full sm:w-3/4 h-full border-2 flex flex-cols-2 justify-between ">
             <div className=" w-full h-full border-r flex flex-col justify-between items-center gap-8 p-4">
@@ -144,7 +122,7 @@ export class DataAdd extends Component {
           </div>
 
           <Link
-            to={`/prod/${this.props.ProdId}`}
+            to={`/prod/${this.props.IdtoStirng}`}
             onClick={() => this.props.addProds(this.state)}
             className="w-1/4 h-14 mt-6 rounded-2xl flex text-center justify-center items-center bg-[#f79b21] hover:shadow-2xl font-bold "
           >
@@ -159,8 +137,12 @@ export class DataAdd extends Component {
 // reduxtan datayı çektiiğimiz kısım
 function mapStateToProps(data) {
   const allData = data.data;
-  const ProdId = allData.data.length.toString();
-  return { ProdId };
+  const ProdId = allData.data.slice(-1);
+  const findId = ProdId[0] && ProdId[0].Id;
+  const IdtoNumber = Number(findId) + 1;
+  const IdtoStirng = IdtoNumber.toString();
+  console.log(IdtoStirng);
+  return { IdtoStirng };
 }
 
 export default connect(mapStateToProps, { addProds })(DataAdd);
