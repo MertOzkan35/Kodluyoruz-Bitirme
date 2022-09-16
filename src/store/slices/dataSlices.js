@@ -19,13 +19,12 @@ export const dataSlices = createSlice({
     deleteData: (state, { payload }) => {
       state.data = state.data.filter((item) => item.Id !== payload);
       localStorage.setItem("products", JSON.stringify(state.data));
+      localStorage.removeItem("shopingCart");
     },
     updateData: (state, { payload }) => {
-      state.data.map((item) =>
-        item.Id == payload.product.Id
-          ? state.data.splice(payload.index, 1, payload.product)
-          : (state.data = state.data)
-      );
+      const index = state.data.findIndex((prod) => prod.Id === payload.Id);
+      state.data[index] = payload;
+
       localStorage.setItem("products", JSON.stringify(state.data));
     },
   },
