@@ -7,7 +7,7 @@ import { changeProds } from "../../store/slices/shoppingCartSlice";
 function Prod() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data.data);
-  const login = useSelector((state) => state.MainData.login);
+  const login = useSelector((state) => state.login.login);
 
   function shoppingCart(value) {
     var value = [data.filter((item) => item.Id === value)];
@@ -36,7 +36,7 @@ function Prod() {
                       Kullanıcı Puanı : {element.Point}
                     </p>
                     <img
-                      className=" rounded-xl object-cover"
+                      className=" rounded-xl object-cover scale-75 hover:scale-100 ease-in duration-500"
                       src={element.img}
                     />
 

@@ -10,7 +10,7 @@ function Prod0() {
   const { id } = useParams();
   // dinamik sayfa için useParams kullanıyoruz
   const [visibilityorder, setVisibilityOrder] = useState("hidden");
-  const login = useSelector((state) => state.MainData.login);
+  const login = useSelector((state) => state.login.login);
   const dispatch = useDispatch();
   const dataStore = useSelector((state) => state.data.data);
   const [data, setdata] = useState(dataStore);
@@ -36,7 +36,7 @@ function Prod0() {
       <div className="flex  flex-col sm:flex-row w-full h-full  gap-4 justify-center items-center my-24">
         <div className="w-3/4 sm:w-1/5 h-full border-2 flex-col ">
           <img
-            className=" rounded-xl object-cover"
+            className=" rounded-xl object-cover scale-75 hover:scale-100 ease-in duration-500"
             src={selectedProd && selectedProd.img}
           />
           <p className="text-center text-2xl font-bold text-[#0F6E0E] mt-12">

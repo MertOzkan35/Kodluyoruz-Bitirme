@@ -55,7 +55,7 @@ function HomePage() {
           </p>
           <input
             onChange={(event) => prodName(event.target.value)}
-            className="sm:w-1/3 w-full h-10 rounded-3xl border border-[#f79b21]  mt-12 pl-2  font-semibold "
+            className="sm:w-1/2 w-full h-10 rounded-3xl border border-[#f79b21]  mt-12 pl-2  font-semibold "
             placeholder="Ürün Ara"
           ></input>
         </div>
@@ -73,7 +73,7 @@ function HomePage() {
                       Kullanıcı Puanı : {element.Point}
                     </p>
                     <img
-                      className=" rounded-xl object-cover"
+                      className=" rounded-xl object-cover scale-75 hover:scale-100 ease-in duration-500"
                       src={element.img}
                     />
 
@@ -140,7 +140,7 @@ function HomePage() {
                 <p className="text-center mb-2"> Toplam Tutar</p>
                 <p className="text-center mb-6">
                   {" "}
-                  {totalPrice.toFixed(0) + ",00 TL"}
+                  {totalPrice.toFixed(3) + ",00 TL"}
                 </p>
                 <button
                   onClick={order}

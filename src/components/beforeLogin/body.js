@@ -16,7 +16,10 @@ function Body() {
               {" "}
               Kullanıcı Puanı : {data[0].Point}
             </p>
-            <img className=" rounded-xl object-cover" src={data[0].img} />
+            <img
+              className=" rounded-xl object-cover scale-75 hover:scale-100 ease-in duration-500"
+              src={data[0].img}
+            />
 
             <p className="font-bold text-[#207609] text-center">
               {data[0].Stok}
@@ -31,35 +34,41 @@ function Body() {
           <div className="w-4/5 h-full border m-auto  p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl ">
             <p className="w-full text-[#4c4c4c] text-end font-bold">
               {" "}
-              Kullanıcı Puanı : {data[7].Point}
+              Kullanıcı Puanı : {data[2].Point}
             </p>
-            <img className=" rounded-xl object-cover" src={data[7].img} />
+            <img
+              className=" rounded-xl object-cover scale-75 hover:scale-100 ease-in duration-500"
+              src={data[2].img}
+            />
 
             <p className="font-bold text-[#207609] text-center">
-              {data[7].Stok}
+              {data[2].Stok}
             </p>
             <p className="text-black hover:text-[#fa9d28] text-center text-xl font-bold mt-8">
-              {data[7].Name}
+              {data[2].Name}
             </p>
             <p className="text-[#001d48] text-center text-xl font-bold mt-12">
-              {data[7].Price + ",00 TL"}
+              {data[2].Price + ",00 TL"}
             </p>
           </div>
           <div className="w-4/5 h-full border m-auto p-4  hover:border-[#fa9d28] rounded-xl flex flex-col hover:shadow-2xl ">
             <p className="w-full text-[#4c4c4c] text-end font-bold">
               {" "}
-              Kullanıcı Puanı : {data[11].Point}
+              Kullanıcı Puanı : {data[4].Point}
             </p>
-            <img className=" rounded-xl object-cover" src={data[11].img} />
+            <img
+              className=" rounded-xl object-cover scale-75 hover:scale-100 ease-in duration-500"
+              src={data[4].img}
+            />
 
             <p className="font-bold text-[#750315] text-center">
-              {data[11].Stok}
+              {data[4].Stok}
             </p>
             <p className="text-black hover:text-[#fa9d28] text-center text-xl font-bold mt-8">
-              {data[11].Name}
+              {data[4].Name}
             </p>
             <p className="text-[#001d48] text-center text-xl font-bold mt-12">
-              {data[11].Price + ",00 TL"}
+              {data[4].Price + ",00 TL"}
             </p>
           </div>
         </div>

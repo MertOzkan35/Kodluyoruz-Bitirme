@@ -1,38 +1,15 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { deleteData } from "../../store/slices/dataSlices";
+import { clearProds } from "../../store/slices/shoppingCartSlice";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import AdminPanel from "./adminPanel";
 
 export class DataDelete extends Component {
   render() {
     return (
       <div className="w-full grid gird-col">
-        <div className="flex flex:row  text-xs sm:text-base mt-2 py-16 gap-4 w-full justify-center  h-full  px-2 items-center border-2 ">
-          <Link
-            to="/admin/add"
-            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
-          >
-            Ürün Ekle
-          </Link>
-          <Link
-            to="/admin/delete"
-            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
-          >
-            Ürün Sil
-          </Link>
-          <Link
-            to="/admin/update"
-            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
-          >
-            Ürün Güncelle
-          </Link>
-          <Link
-            to="/admin/salesdata"
-            className="w-1/6 text-center  h-12 flex justify-center items-center font-bold rounded-2xl border-2 bg-[#f79b21] hover:shadow-2xl "
-          >
-            Satış Bilgileri
-          </Link>
-        </div>
+        <AdminPanel />
         <div className=" w-full  h-full mt-2 ">
           <div className=" grid grid-cols-1 justify-center lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-12 m-16 ">
             {this.props.allData &&
@@ -65,7 +42,10 @@ export class DataDelete extends Component {
                     <div className="w-full flex justify-center items-center pt-8">
                       <button
                         // onClick={(e) => shoppingCart(`${element.Id}`)}
-                        onClick={() => this.props.deleteData(`${element.Id}`)}
+                        onClick={() => {
+                          this.props.deleteData(`${element.Id}`);
+                          this.props.clearProds();
+                        }}
                         className="w-1/2  h-12 bg-[#fa9d28]  hover:border-2 rounded-2xl border font-bold"
                       >
                         Ürünü Sil
@@ -90,5 +70,5 @@ function mapStateToProps(data) {
 
 const mapDispatchToProps = {};
 
-export default connect(mapStateToProps, { deleteData })(DataDelete);
+export default connect(mapStateToProps, { deleteData, clearProds })(DataDelete);
 // delete data içine payload gönderiyoruz
