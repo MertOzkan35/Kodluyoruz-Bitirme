@@ -24,7 +24,7 @@ export class UpdateProd extends Component {
     this.setState({ [key]: event });
   }
   ProdUpdatePrice(event, key) {
-    this.NumberPrice = parseInt(event);
+    this.NumberPrice = parseFloat(event);
     console.log(this.NumberPrice);
     this.setState({ [key]: this.NumberPrice });
   }
