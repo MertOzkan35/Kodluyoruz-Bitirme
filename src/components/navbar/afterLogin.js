@@ -15,7 +15,6 @@ function AfterLoginNavbar() {
   }
   const prodsData = useSelector((state) => state.prods.prods);
   const [prodNumber, setprodNumber] = useState(0);
-  console.log(adminLogin);
   return (
     <div className=" sticky top-0 z-50 bg-[#ffffff] w-full h-[100px] border-b-2 sm:pr-4 flex flex-col sm:flex-row sm:justify-between sm:items-center justify-center items-center">
       <Link to="/" className=" w-[200px] sm:ml-24 sm:mt-3 ml-2  mb-2 ">

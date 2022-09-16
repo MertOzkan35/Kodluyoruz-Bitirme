@@ -62,7 +62,6 @@ export class DataUpdate extends Component {
 function mapStateToProps(data) {
   const allData = data.data.data;
   // reduxtan datayı çekiyoruz map ile dönüyoruz
-  console.log(allData);
   return { allData };
 }
 export default connect(mapStateToProps)(DataUpdate);

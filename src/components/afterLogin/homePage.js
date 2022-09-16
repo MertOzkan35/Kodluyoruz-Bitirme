@@ -38,7 +38,6 @@ function HomePage() {
 
   const prodName = (event) => {
     const name = event.toLowerCase();
-    console.log(name);
     const filteredArray = dataStore.filter((item) =>
       item.Name.toLowerCase().includes(name)
     );

@@ -32,7 +32,6 @@ function App() {
   const adminPassword = localStorage.getItem("adminPassword");
 
   useEffect(() => {
-    console.log(adminPassword);
     if (adminPassword) {
       dispatch(isLogin(true));
     }

@@ -141,7 +141,6 @@ function mapStateToProps(data) {
   const findId = ProdId[0] && ProdId[0].Id;
   const IdtoNumber = Number(findId) + 1;
   const IdtoStirng = IdtoNumber.toString();
-  console.log(IdtoStirng);
   return { IdtoStirng };
 }
 
