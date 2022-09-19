@@ -42,6 +42,7 @@ class Admin extends Component {
         <div className="w-full flex justify-center  items-center">
           <div className="mt-[100px] w-3/5 sm:w-1/2 md:w-1/3 h-[350px] mb-12  rounded-2xl flex flex-col justify-between items-center bg-[#f79b21] bg-opacity-40 p-11 border-2 border-[#f79b21]">
             <p className="font-bold ">Admin Giriş Paneli </p>
+            <p className=" ">(Şifre: 112234) </p>
 
             <div className="gap-4">
               <p className="text-[16px] w-54  gap-2  flex justify-center items-center font-semibold pb-4 text-center ">
